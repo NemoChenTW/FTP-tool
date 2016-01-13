@@ -8,6 +8,10 @@
 #ifndef SRC_FTPCORE_FTPCORE_H_
 #define SRC_FTPCORE_FTPCORE_H_
 
+#include <string>
+
+using namespace std;
+
 class FTPCore {
 public:
 	FTPCore();
@@ -19,6 +23,37 @@ public:
 		folderUpload,
 		fileDownload,
 		folderDownload
+	};
+
+	struct uploadInfo
+	{
+		uploadInfo(string name, string localPath,
+				string remoteUploadPath, string successFolderPath)
+		:name(name), localPath(localPath)
+		, remoteUploadPath(remoteUploadPath), successFolderPath(successFolderPath)
+		{
+		}
+		~uploadInfo() = default;
+
+	private:
+		string name;				///< Name of this upload setting.
+		string localPath;			///< Local upload path (File or Folder according to the FTPType).
+		string remoteUploadPath;	///< Remote server upload path.
+		string successFolderPath;	///< Local folder path for storing success files.
+	};
+
+	struct downloadInfo
+	{
+		downloadInfo(string name, string remoteFolderPath, string localPath)
+		:name(name), remoteFolderPath(remoteFolderPath),  localPath(localPath)
+		 {
+		 }
+		~downloadInfo() = default;
+
+	private:
+		string name;				///< Name of this download setting.
+		string remoteFolderPath;	///< Remote server download path.
+		string localPath;			///< Local download path.
 	};
 
 };
