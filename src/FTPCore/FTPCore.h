@@ -9,10 +9,16 @@
 #define SRC_FTPCORE_FTPCORE_H_
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class FTPCore {
+
+struct FTPAction;
+private:
+	vector <FTPAction*> vector_FTPAction;
+
 public:
 	FTPCore();
 	virtual ~FTPCore();
