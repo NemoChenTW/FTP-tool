@@ -70,6 +70,17 @@ private:
 		string loginName;
 		string loginPassword;
 	};
+
+	struct FTPAction
+	{
+		FTPType 		ftpType;
+		ConnectInfo		connectInfo;
+		union
+		{
+			UploadInfo		uploadInfo;
+			DownloadInfo	downloadInfo;
+		}ftpInfo;
+	};
 };
 
 #endif /* SRC_FTPCORE_FTPCORE_H_ */
