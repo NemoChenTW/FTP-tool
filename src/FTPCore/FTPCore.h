@@ -121,6 +121,11 @@ public:
 
 	struct FTPAction
 	{
+		FTPAction(FTPType ftpType, ConnectInfo connectInfo, FTPInfo *ftpInfo)
+		:ftpType(ftpType), connectInfo(connectInfo), ftpInfo(ftpInfo)
+		{
+
+		}
 		FTPType 		ftpType;
 		ConnectInfo		connectInfo;
 		FTPInfo			*ftpInfo;
