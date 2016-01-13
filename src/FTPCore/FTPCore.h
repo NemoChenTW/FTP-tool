@@ -67,6 +67,14 @@ private:
 		 }
 		~DownloadInfo() = default;
 
+		DownloadInfo & operator=(const DownloadInfo &right)
+		{
+			this->name 				= right.name;
+			this->remoteFolderPath 	= right.remoteFolderPath;
+			this->localPath 		= right.localPath;
+
+			return (*this);
+		}
 	private:
 		string name;				///< Name of this download setting.
 		string remoteFolderPath;	///< Remote server download path.
