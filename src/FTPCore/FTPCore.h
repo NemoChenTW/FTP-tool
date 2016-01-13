@@ -15,7 +15,9 @@ using namespace std;
 
 class FTPCore {
 
-struct FTPAction;
+public:
+	struct FTPAction;
+
 private:
 	vector <FTPAction> vector_FTPAction;
 
@@ -25,7 +27,6 @@ public:
 
 	void addFTPAction(FTPAction ftpAction);
 
-private:
 	enum class FTPType
 	{
 		fileUpload,
