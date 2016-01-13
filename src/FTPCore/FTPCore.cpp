@@ -18,3 +18,7 @@ FTPCore::~FTPCore()
 	// TODO Auto-generated destructor stub
 }
 
+void FTPCore::addFTPAction(FTPAction ftpAction)
+{
+	vector_FTPAction.push_back(ftpAction);
+}

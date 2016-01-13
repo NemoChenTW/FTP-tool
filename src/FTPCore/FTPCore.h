@@ -23,6 +23,8 @@ public:
 	FTPCore();
 	virtual ~FTPCore();
 
+	void addFTPAction(FTPAction ftpAction);
+
 private:
 	enum class FTPType
 	{
