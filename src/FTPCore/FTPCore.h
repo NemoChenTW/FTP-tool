@@ -89,6 +89,15 @@ private:
 		}
 		~ConnectInfo() = default;
 
+		ConnectInfo & operator=(const ConnectInfo &right)
+		{
+			this->serverIP 		= right.serverIP;
+			this->loginName 	= right.loginName;
+			this->loginPassword = right.loginPassword;
+
+			return (*this);
+		}
+
 	private:
 		string serverIP;
 		string loginName;
