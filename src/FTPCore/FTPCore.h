@@ -25,15 +25,15 @@ public:
 		folderDownload
 	};
 
-	struct uploadInfo
+	struct UploadInfo
 	{
-		uploadInfo(string name, string localPath,
+		UploadInfo(string name, string localPath,
 				string remoteUploadPath, string successFolderPath)
 		:name(name), localPath(localPath)
 		, remoteUploadPath(remoteUploadPath), successFolderPath(successFolderPath)
 		{
 		}
-		~uploadInfo() = default;
+		~UploadInfo() = default;
 
 	private:
 		string name;				///< Name of this upload setting.
@@ -42,13 +42,13 @@ public:
 		string successFolderPath;	///< Local folder path for storing success files.
 	};
 
-	struct downloadInfo
+	struct DownloadInfo
 	{
-		downloadInfo(string name, string remoteFolderPath, string localPath)
+		DownloadInfo(string name, string remoteFolderPath, string localPath)
 		:name(name), remoteFolderPath(remoteFolderPath),  localPath(localPath)
 		 {
 		 }
-		~downloadInfo() = default;
+		~DownloadInfo() = default;
 
 	private:
 		string name;				///< Name of this download setting.
@@ -56,13 +56,13 @@ public:
 		string localPath;			///< Local download path.
 	};
 
-	struct connectInfo
+	struct ConnectInfo
 	{
-		connectInfo(string IP, string name, string password)
+		ConnectInfo(string IP, string name, string password)
 		:serverIP(IP), loginName(name), loginPassword(password)
 		{
 		}
-		~connectInfo() = default;
+		~ConnectInfo() = default;
 
 	private:
 		string serverIP;
