@@ -12,6 +12,15 @@ class FTPCore {
 public:
 	FTPCore();
 	virtual ~FTPCore();
+
+	enum class FTPType
+	{
+		fileUpload,
+		folderUpload,
+		fileDownload,
+		folderDownload
+	};
+
 };
 
 #endif /* SRC_FTPCORE_FTPCORE_H_ */
