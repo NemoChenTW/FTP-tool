@@ -30,3 +30,8 @@
 # Eclipse
 Debug/
 Release/
+
+# c-build-tools
+source.mk
+
+FTP-tool
