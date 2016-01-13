@@ -56,6 +56,19 @@ public:
 		string localPath;			///< Local download path.
 	};
 
+	struct connectInfo
+	{
+		connectInfo(string IP, string name, string password)
+		:serverIP(IP), loginName(name), loginPassword(password)
+		{
+		}
+		~connectInfo() = default;
+
+	private:
+		string serverIP;
+		string loginName;
+		string loginPassword;
+	};
 };
 
 #endif /* SRC_FTPCORE_FTPCORE_H_ */
