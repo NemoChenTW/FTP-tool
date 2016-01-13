@@ -42,6 +42,16 @@ private:
 		}
 		~UploadInfo() = default;
 
+		UploadInfo & operator=(const UploadInfo &right)
+		{
+			this->name 				= right.name;
+			this->localPath 		= right.localPath;
+			this->remoteUploadPath 	= right.remoteUploadPath;
+			this->successFolderPath	= right.successFolderPath;
+
+			return (*this);
+		}
+
 	private:
 		string name;				///< Name of this upload setting.
 		string localPath;			///< Local upload path (File or Folder according to the FTPType).
@@ -57,6 +67,14 @@ private:
 		 }
 		~DownloadInfo() = default;
 
+		DownloadInfo & operator=(const DownloadInfo &right)
+		{
+			this->name 				= right.name;
+			this->remoteFolderPath 	= right.remoteFolderPath;
+			this->localPath 		= right.localPath;
+
+			return (*this);
+		}
 	private:
 		string name;				///< Name of this download setting.
 		string remoteFolderPath;	///< Remote server download path.
@@ -70,6 +88,15 @@ private:
 		{
 		}
 		~ConnectInfo() = default;
+
+		ConnectInfo & operator=(const ConnectInfo &right)
+		{
+			this->serverIP 		= right.serverIP;
+			this->loginName 	= right.loginName;
+			this->loginPassword = right.loginPassword;
+
+			return (*this);
+		}
 
 	private:
 		string serverIP;
@@ -86,6 +113,24 @@ private:
 			UploadInfo		uploadInfo;
 			DownloadInfo	downloadInfo;
 		}ftpInfo;
+
+		FTPAction & operator=(const FTPAction &right)
+		{
+			this->ftpType 		= right.ftpType;
+			this->connectInfo 	= right.connectInfo;
+
+			switch(ftpType)
+			{
+				case FTPType::fileUpload:
+				case FTPType::folderUpload:
+					this->ftpInfo.uploadInfo = right.ftpInfo.uploadInfo; break;
+
+				case FTPType::fileDownload:
+				case FTPType::folderDownload:
+					this->ftpInfo.downloadInfo = right.ftpInfo.downloadInfo; break;
+			}
+			return (*this);
+		}
 	};
 };
 
