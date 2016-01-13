@@ -113,6 +113,24 @@ private:
 			UploadInfo		uploadInfo;
 			DownloadInfo	downloadInfo;
 		}ftpInfo;
+
+		FTPAction & operator=(const FTPAction &right)
+		{
+			this->ftpType 		= right.ftpType;
+			this->connectInfo 	= right.connectInfo;
+
+			switch(ftpType)
+			{
+				case FTPType::fileUpload:
+				case FTPType::folderUpload:
+					this->ftpInfo.uploadInfo = right.ftpInfo.uploadInfo; break;
+
+				case FTPType::fileDownload:
+				case FTPType::folderDownload:
+					this->ftpInfo.downloadInfo = right.ftpInfo.downloadInfo; break;
+			}
+			return (*this);
+		}
 	};
 };
 
