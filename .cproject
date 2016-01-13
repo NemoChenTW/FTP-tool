@@ -33,10 +33,12 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1180848959" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
 								<option id="gnu.cpp.compiler.option.optimization.level.1311939500" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.513918700" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.other.819154944" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -std=c++0x -pthread -Wl,--no-as-needed" valueType="string"/>
-								<option id="gnu.cpp.compiler.option.preprocessor.def.30024057" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+								<option id="gnu.cpp.compiler.option.other.other.819154944" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=c++0x -pthread -Wl,--no-as-needed" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.30024057" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__cplusplus=201103L"/>
 								</option>
+								<option id="gnu.cpp.compiler.option.dialect.std.271830186" superClass="gnu.cpp.compiler.option.dialect.std" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.pic.2141077376" superClass="gnu.cpp.compiler.option.other.pic" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.772585186" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1175250380" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
@@ -44,7 +46,7 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.548193736" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
 								<option defaultValue="true" id="gnu.cpp.link.option.shared.1089308237" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.flags.84007236" superClass="gnu.cpp.link.option.flags" value="-std=c++11 -pthread  -Wl,--no-as-needed" valueType="string"/>
+								<option id="gnu.cpp.link.option.flags.84007236" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-std=c++11 -pthread  -Wl,--no-as-needed" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.683914927" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -92,8 +94,8 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.447463498" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
 								<option id="gnu.cpp.compiler.option.optimization.level.1705344659" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.1515858181" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.other.1167685993" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -std=c++0x -pthread -Wl,--no-as-needed" valueType="string"/>
-								<option id="gnu.cpp.compiler.option.preprocessor.def.1441998713" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+								<option id="gnu.cpp.compiler.option.other.other.1167685993" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=c++0x -pthread -Wl,--no-as-needed" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1441998713" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__cplusplus=201103L"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.830919696" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -103,7 +105,7 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.224701079" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
 								<option defaultValue="true" id="gnu.cpp.link.option.shared.633220611" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.flags.1078556234" superClass="gnu.cpp.link.option.flags" value="-std=c++11 -pthread  -Wl,--no-as-needed" valueType="string"/>
+								<option id="gnu.cpp.link.option.flags.1078556234" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-std=c++11 -pthread  -Wl,--no-as-needed" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1996970147" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
