@@ -17,6 +17,7 @@ public:
 	FTPCore();
 	virtual ~FTPCore();
 
+private:
 	enum class FTPType
 	{
 		fileUpload,
