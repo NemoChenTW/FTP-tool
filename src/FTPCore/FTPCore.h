@@ -32,8 +32,22 @@ private:
 		folderDownload
 	};
 
-	struct UploadInfo
+	class FTPInfo
 	{
+	public:
+		FTPInfo() {};
+		~FTPInfo() = default;
+	};
+
+	class UploadInfo :public FTPInfo
+	{
+	private:
+		string name;				///< Name of this upload setting.
+		string localPath;			///< Local upload path (File or Folder according to the FTPType).
+		string remoteUploadPath;	///< Remote server upload path.
+		string successFolderPath;	///< Local folder path for storing success files.
+
+	public:
 		UploadInfo(string name, string localPath,
 				string remoteUploadPath, string successFolderPath)
 		:name(name), localPath(localPath)
@@ -52,15 +66,16 @@ private:
 			return (*this);
 		}
 
-	private:
-		string name;				///< Name of this upload setting.
-		string localPath;			///< Local upload path (File or Folder according to the FTPType).
-		string remoteUploadPath;	///< Remote server upload path.
-		string successFolderPath;	///< Local folder path for storing success files.
 	};
 
-	struct DownloadInfo
+	class DownloadInfo :public FTPInfo
 	{
+	private:
+		string name;				///< Name of this download setting.
+		string remoteDownloadPath;	///< Remote server download path.
+		string localPath;			///< Local download path.
+
+	public:
 		DownloadInfo(string name, string remoteDownloadPath, string localPath)
 		:name(name), remoteDownloadPath(remoteDownloadPath),  localPath(localPath)
 		 {
@@ -75,10 +90,7 @@ private:
 
 			return (*this);
 		}
-	private:
-		string name;				///< Name of this download setting.
-		string remoteDownloadPath;	///< Remote server download path.
-		string localPath;			///< Local download path.
+
 	};
 
 	struct ConnectInfo
@@ -108,27 +120,14 @@ private:
 	{
 		FTPType 		ftpType;
 		ConnectInfo		connectInfo;
-		union
-		{
-			UploadInfo		uploadInfo;
-			DownloadInfo	downloadInfo;
-		}ftpInfo;
+		FTPInfo			*ftpInfo;
 
 		FTPAction & operator=(const FTPAction &right)
 		{
 			this->ftpType 		= right.ftpType;
 			this->connectInfo 	= right.connectInfo;
+			this->ftpInfo		= right.ftpInfo;
 
-			switch(ftpType)
-			{
-				case FTPType::fileUpload:
-				case FTPType::folderUpload:
-					this->ftpInfo.uploadInfo = right.ftpInfo.uploadInfo; break;
-
-				case FTPType::fileDownload:
-				case FTPType::folderDownload:
-					this->ftpInfo.downloadInfo = right.ftpInfo.downloadInfo; break;
-			}
 			return (*this);
 		}
 	};
