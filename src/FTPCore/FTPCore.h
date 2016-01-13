@@ -61,8 +61,8 @@ private:
 
 	struct DownloadInfo
 	{
-		DownloadInfo(string name, string remoteFolderPath, string localPath)
-		:name(name), remoteFolderPath(remoteFolderPath),  localPath(localPath)
+		DownloadInfo(string name, string remoteDownloadPath, string localPath)
+		:name(name), remoteDownloadPath(remoteDownloadPath),  localPath(localPath)
 		 {
 		 }
 		~DownloadInfo() = default;
@@ -70,14 +70,14 @@ private:
 		DownloadInfo & operator=(const DownloadInfo &right)
 		{
 			this->name 				= right.name;
-			this->remoteFolderPath 	= right.remoteFolderPath;
+			this->remoteDownloadPath 	= right.remoteDownloadPath;
 			this->localPath 		= right.localPath;
 
 			return (*this);
 		}
 	private:
 		string name;				///< Name of this download setting.
-		string remoteFolderPath;	///< Remote server download path.
+		string remoteDownloadPath;	///< Remote server download path.
 		string localPath;			///< Local download path.
 	};
 
