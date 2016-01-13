@@ -9,14 +9,21 @@
 #define SRC_FTPCORE_FTPCORE_H_
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class FTPCore {
+
+struct FTPAction;
+private:
+	vector <FTPAction*> vector_FTPAction;
+
 public:
 	FTPCore();
 	virtual ~FTPCore();
 
+private:
 	enum class FTPType
 	{
 		fileUpload,
@@ -68,6 +75,17 @@ public:
 		string serverIP;
 		string loginName;
 		string loginPassword;
+	};
+
+	struct FTPAction
+	{
+		FTPType 		ftpType;
+		ConnectInfo		connectInfo;
+		union
+		{
+			UploadInfo		uploadInfo;
+			DownloadInfo	downloadInfo;
+		}ftpInfo;
 	};
 };
 
