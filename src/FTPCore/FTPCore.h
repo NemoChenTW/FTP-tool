@@ -17,7 +17,7 @@ class FTPCore {
 
 struct FTPAction;
 private:
-	vector <FTPAction*> vector_FTPAction;
+	vector <FTPAction> vector_FTPAction;
 
 public:
 	FTPCore();
