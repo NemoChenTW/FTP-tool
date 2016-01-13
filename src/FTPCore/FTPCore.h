@@ -42,6 +42,16 @@ private:
 		}
 		~UploadInfo() = default;
 
+		UploadInfo & operator=(const UploadInfo &right)
+		{
+			this->name 				= right.name;
+			this->localPath 		= right.localPath;
+			this->remoteUploadPath 	= right.remoteUploadPath;
+			this->successFolderPath	= right.successFolderPath;
+
+			return (*this);
+		}
+
 	private:
 		string name;				///< Name of this upload setting.
 		string localPath;			///< Local upload path (File or Folder according to the FTPType).
