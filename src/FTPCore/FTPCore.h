@@ -25,6 +25,7 @@ public:
 	FTPCore();
 	virtual ~FTPCore();
 
+	///		Push FTPAction into vector.
 	void addFTPAction(FTPAction ftpAction);
 
 	enum class FTPType
