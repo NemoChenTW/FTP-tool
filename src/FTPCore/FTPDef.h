@@ -8,7 +8,9 @@
 #ifndef SRC_FTPCORE_FTPDEF_H_
 #define SRC_FTPCORE_FTPDEF_H_
 
+#include <iostream>
 #include <string>
+
 namespace FTPDef
 {
 using namespace std;
@@ -19,12 +21,15 @@ using namespace std;
 		fileDownload,
 		folderDownload
 	};
+	char* str_FTPType[] = {"fileUpload", "folderUpload", "fileDownload", "folderDownload"};
 
 	class FTPInfo
 	{
 	public:
 		FTPInfo() {};
-		~FTPInfo() = default;
+		virtual ~FTPInfo() = default;
+
+		virtual void show()=0;
 	};
 
 	class UploadInfo :public FTPInfo
@@ -45,6 +50,14 @@ using namespace std;
 		~UploadInfo() = default;
 
 		UploadInfo & operator=(const UploadInfo &right);
+
+		void show()
+		{
+			cout << "name = " 				<< name 				<< endl;
+			cout << "localPath = " 			<< localPath			<< endl;
+			cout << "remoteUploadPath = " 	<< remoteUploadPath 	<< endl;
+			cout << "successFolderPath = " 	<< successFolderPath 	<< endl;
+		}
 	};
 
 	class DownloadInfo :public FTPInfo
@@ -62,6 +75,13 @@ using namespace std;
 		~DownloadInfo() = default;
 
 		DownloadInfo & operator=(const DownloadInfo &right);
+
+		void show()
+		{
+			cout << "name = " 				<< name 				<< endl;
+			cout << "remoteDownloadPath = " 	<< remoteDownloadPath	<< endl;
+			cout << "localPath = " 			<< localPath 			<< endl;
+		}
 	};
 
 	struct ConnectInfo
@@ -73,6 +93,13 @@ using namespace std;
 		~ConnectInfo() = default;
 
 		ConnectInfo & operator=(const ConnectInfo &right);
+
+		void show()
+		{
+			cout << "serverIP = "		<< serverIP 		<< endl;
+			cout << "loginName = "		<< loginName 		<< endl;
+			cout << "loginPassword = "	<< loginPassword 	<< endl;
+		}
 
 	private:
 		string serverIP;
@@ -92,6 +119,13 @@ using namespace std;
 		FTPInfo			*ftpInfo;
 
 		FTPAction & operator=(const FTPAction &right);
+
+		void show()
+		{
+			cout << "ftpType = " 		<< str_FTPType[(int)ftpType] << endl;
+			connectInfo.show();
+			ftpInfo->show();
+		}
 	};
 
 
