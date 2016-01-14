@@ -1,0 +1,20 @@
+/*
+ * FTPProcessor.cpp
+ *
+ *  Created on: 2016年1月14日
+ *      Author: nemochen
+ */
+
+#include <FTPProcessor/FTPProcessor.h>
+
+FTPProcessor::FTPProcessor()
+{
+	// TODO Auto-generated constructor stub
+
+}
+
+FTPProcessor::~FTPProcessor()
+{
+	// TODO Auto-generated destructor stub
+}
+
