@@ -59,16 +59,7 @@ public:
 		}
 		~UploadInfo() = default;
 
-		UploadInfo & operator=(const UploadInfo &right)
-		{
-			this->name 				= right.name;
-			this->localPath 		= right.localPath;
-			this->remoteUploadPath 	= right.remoteUploadPath;
-			this->successFolderPath	= right.successFolderPath;
-
-			return (*this);
-		}
-
+		UploadInfo & operator=(const UploadInfo &right);
 	};
 
 	class DownloadInfo :public FTPInfo
@@ -85,15 +76,7 @@ public:
 		 }
 		~DownloadInfo() = default;
 
-		DownloadInfo & operator=(const DownloadInfo &right)
-		{
-			this->name 				= right.name;
-			this->remoteDownloadPath 	= right.remoteDownloadPath;
-			this->localPath 		= right.localPath;
-
-			return (*this);
-		}
-
+		DownloadInfo & operator=(const DownloadInfo &right);
 	};
 
 	struct ConnectInfo
@@ -104,14 +87,7 @@ public:
 		}
 		~ConnectInfo() = default;
 
-		ConnectInfo & operator=(const ConnectInfo &right)
-		{
-			this->serverIP 		= right.serverIP;
-			this->loginName 	= right.loginName;
-			this->loginPassword = right.loginPassword;
-
-			return (*this);
-		}
+		ConnectInfo & operator=(const ConnectInfo &right);
 
 	private:
 		string serverIP;
@@ -130,14 +106,7 @@ public:
 		ConnectInfo		connectInfo;
 		FTPInfo			*ftpInfo;
 
-		FTPAction & operator=(const FTPAction &right)
-		{
-			this->ftpType 		= right.ftpType;
-			this->connectInfo 	= right.connectInfo;
-			this->ftpInfo		= right.ftpInfo;
-
-			return (*this);
-		}
+		FTPAction & operator=(const FTPAction &right);
 	};
 };
 
