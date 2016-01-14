@@ -9,7 +9,7 @@
 #define SRC_FTPCORE_FTPCORE_H_
 
 #include <string>
-#include <vector>
+#include <list>
 #include "FTPDef.h"
 
 using namespace std;
@@ -18,7 +18,7 @@ using FTPDef::FTPAction;
 class FTPCore {
 
 private:
-	vector <FTPAction> vector_FTPAction;
+	list <FTPAction> list_FTPAction;
 
 public:
 	FTPCore();
