@@ -13,7 +13,7 @@ using namespace std;
 
 int main()
 {
-	cout << "FTP-Tool Test." <<endl;
+	cout << "FTP-Tool Test." << endl;
 
 	FTPCore ftp;
 
@@ -24,6 +24,7 @@ int main()
 
 	ftp.addFTPAction(ftpAct);
 
+	cout << "End FTP-Tool Test." << endl;
 	return 0;
 }
 
