@@ -19,6 +19,7 @@ using namespace std;
 		fileDownload,
 		folderDownload
 	};
+	char* str_FTPType[] = {"fileUpload", "folderUpload", "fileDownload", "folderDownload"};
 
 	class FTPInfo
 	{
