@@ -23,6 +23,7 @@ int main()
 	FTPAction ftpAct(FTPType::folderUpload, connectInfo, &uploadInfo);
 
 	ftp.addFTPAction(ftpAct);
+	ftp.processFTPAction();
 
 	cout << "End FTP-Tool Test." << endl;
 	return 0;

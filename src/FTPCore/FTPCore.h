@@ -27,6 +27,8 @@ public:
 	///		Push FTPAction into vector.
 	void addFTPAction(FTPAction ftpAction);
 
+	///		Process FTPAction in the vector.
+	void processFTPAction();
 };
 
 #endif /* SRC_FTPCORE_FTPCORE_H_ */

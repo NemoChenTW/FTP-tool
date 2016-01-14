@@ -28,3 +28,15 @@ void FTPCore::addFTPAction(FTPAction ftpAction)
 	vector_FTPAction.push_back(ftpAction);
 }
 
+/**
+ * @brief	Process FTPAction in the vector.
+ */
+void FTPCore::processFTPAction()
+{
+	for(auto i = vector_FTPAction.begin();
+			i != vector_FTPAction.end(); i++)
+	{
+		(*i).show();
+	}
+
+}
