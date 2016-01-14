@@ -18,3 +18,7 @@ FTPProcessor::~FTPProcessor()
 	// TODO Auto-generated destructor stub
 }
 
+void FTPProcessor::process(FTPCore *ftp)
+{
+
+}

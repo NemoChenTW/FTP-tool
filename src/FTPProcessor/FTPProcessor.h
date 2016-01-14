@@ -8,10 +8,14 @@
 #ifndef SRC_FTPPROCESSOR_FTPPROCESSOR_H_
 #define SRC_FTPPROCESSOR_FTPPROCESSOR_H_
 
+#include "FTPCore/FTPCore.h"
+
 class FTPProcessor {
 public:
 	FTPProcessor();
 	virtual ~FTPProcessor();
+
+	void process(FTPCore *ftp);
 };
 
 #endif /* SRC_FTPPROCESSOR_FTPPROCESSOR_H_ */
