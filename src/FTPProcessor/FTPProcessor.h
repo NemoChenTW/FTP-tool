@@ -10,6 +10,9 @@
 
 #include "FTPCore/FTPCore.h"
 
+namespace FTPProcessor
+{
+
 class FTPProcessor {
 public:
 	FTPProcessor();
@@ -18,4 +21,5 @@ public:
 	void process(FTPCore *ftp);
 };
 
+}
 #endif /* SRC_FTPPROCESSOR_FTPPROCESSOR_H_ */
