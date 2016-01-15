@@ -36,6 +36,13 @@ int main()
 		cout << "File Not Exit" << endl;
 	}
 
+	list<string> files;
+	Utility::FileUtils::listDirectory("/home/nemochen/workspace/FTP-tool/", files ,true);
+	for(auto i = files.begin(); i != files.end(); i++)
+	{
+		cout << (*i) << endl;
+	}
+
 
 	cout << "End FTP-Tool Test." << endl << endl;
 	return 0;
