@@ -21,6 +21,13 @@ using namespace std;
 /**
  * execute shell command and check result valid
  */
+/**
+ * @brief	Execute shell command and check result valid.
+ *
+ * @param	cmdString	Input shell command.
+ *
+ * @return	Shell command execute result.
+ */
 bool shellExecute(const char* cmdString)
 {
     if (NULL == cmdString) return false;
