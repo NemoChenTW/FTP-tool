@@ -25,7 +25,7 @@ FTPCore::~FTPCore()
  */
 void FTPCore::addFTPAction(FTPAction ftpAction)
 {
-	vector_FTPAction.push_back(ftpAction);
+	list_FTPAction.push_back(ftpAction);
 }
 
 /**
@@ -33,8 +33,8 @@ void FTPCore::addFTPAction(FTPAction ftpAction)
  */
 void FTPCore::processFTPAction()
 {
-	for(auto i = vector_FTPAction.begin();
-			i != vector_FTPAction.end(); i++)
+	for(auto i = list_FTPAction.begin();
+			i != list_FTPAction.end(); i++)
 	{
 		(*i).show();
 	}
