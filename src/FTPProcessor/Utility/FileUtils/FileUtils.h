@@ -8,6 +8,7 @@
 #ifndef SRC_FTPPROCESSOR_UTILITY_FILEUTILS_FILEUTILS_H_
 #define SRC_FTPPROCESSOR_UTILITY_FILEUTILS_FILEUTILS_H_
 
+#include <list>
 #include <string>
 #include <sys/stat.h>
 
@@ -44,6 +45,9 @@ namespace FileUtils {
 
     ///	Remove file.
     bool removeFile(const char* filePath);
+
+    ///	List directory files.
+    int listDirectory(std::string dirName, std::list<std::string> &files, bool recursive = false);
 
 } /* namespace FileUtils */
 } /* namespace Utility */

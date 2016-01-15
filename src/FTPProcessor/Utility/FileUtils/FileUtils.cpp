@@ -7,6 +7,7 @@
 
 #include <FTPProcessor/Utility/FileUtils/FileUtils.h>
 
+#include <dirent.h>
 #include <fstream>
 #include <iostream>
 
@@ -110,6 +111,49 @@ using namespace std;
 			cout << "File successfully deleted " << filePath << endl;
 			return true;
 		}
+	}
+
+	/**
+	 * @brief	List directory files.
+	 *
+	 * @param	dirName		Input directory path.
+	 * @param	files		Input file list container.
+	 * @param	recursive	Recursive list flag (Like Linux "ls -R").
+	 *
+	 * @retval	0		Normal.
+	 * @retval	errno	Error number of directory open failure.
+	 */
+	int listDirectory(string dirName, list<string> &files, bool recursive)
+	{
+		// Process directory path character "/"
+		if(dirName[dirName.length()-1] != '/')
+			dirName.append("/");
+
+		DIR *dp;
+		struct dirent *dirp;
+		if((dp =opendir(dirName.c_str())) == NULL)
+		{
+			cout << "Error (" << errno << ") opening" << dirName << endl;
+			return errno;
+		}
+
+		while((dirp = readdir(dp)) != NULL)
+		{
+			//Don't process '..' and '.' directories
+			if(dirp->d_name[0] == '.') continue;
+
+			if(dirp->d_type == DT_REG)		// Regular file
+				files.push_back(string(dirName + dirp->d_name));
+			else if(dirp->d_type == DT_DIR)	// Directory
+			{
+				if(recursive)
+					listDirectory(dirName + dirp->d_name + "/", files, recursive);
+			}
+		}
+		closedir(dp);
+		files.sort();
+
+		return 0;
 	}
 
 } /* namespace FileUtils */
