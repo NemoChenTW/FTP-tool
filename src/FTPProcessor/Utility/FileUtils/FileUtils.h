@@ -13,7 +13,7 @@
 
 namespace FTPProcessor {
 namespace Utility {
-namespace FileUtlis {
+namespace FileUtils {
 
 	/**
 	 * @brief	Check the file is exist or not.
@@ -45,7 +45,7 @@ namespace FileUtlis {
     ///	Remove file.
     bool removeFile(const char* filePath);
 
-} /* namespace FileUtlis */
+} /* namespace FileUtils */
 } /* namespace Utility */
 } /* namespace FTPProcessor */
 

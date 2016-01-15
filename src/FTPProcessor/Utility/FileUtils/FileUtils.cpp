@@ -12,7 +12,7 @@
 
 namespace FTPProcessor {
 namespace Utility {
-namespace FileUtlis {
+namespace FileUtils {
 
 using namespace std;
 	/**
@@ -112,6 +112,6 @@ using namespace std;
 		}
 	}
 
-} /* namespace FileUtlis */
+} /* namespace FileUtils */
 } /* namespace Utility */
 } /* namespace FTPProcessor */
