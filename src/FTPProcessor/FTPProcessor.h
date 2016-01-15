@@ -9,6 +9,7 @@
 #define SRC_FTPPROCESSOR_FTPPROCESSOR_H_
 
 #include "FTPCore/FTPCore.h"
+#include "Utility/Utility.h"
 
 namespace FTPProcessor
 {
