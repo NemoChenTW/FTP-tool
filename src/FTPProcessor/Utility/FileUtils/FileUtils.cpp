@@ -125,7 +125,7 @@ using namespace std;
 	 */
 	int listDirectory(string dirName, list<string> &files, bool recursive)
 	{
-		// Process directory path character "/"
+		// Process directory path separator character '/'.
 		if(dirName[dirName.length()-1] != '/')
 			dirName.append("/");
 
