@@ -43,6 +43,7 @@ int main()
 		cout << (*i) << endl;
 	}
 
+	Utility::BashUtils::shellExecute("ls --color");
 
 	cout << "End FTP-Tool Test." << endl << endl;
 	return 0;

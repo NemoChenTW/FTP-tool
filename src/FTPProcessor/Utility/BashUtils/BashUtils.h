@@ -12,6 +12,7 @@ namespace FTPProcessor {
 namespace Utility {
 namespace BashUtils {
 
+bool shellExecute(const char* cmdString);
 
 } /* namespace BashUtils */
 } /* namespace Utility */
