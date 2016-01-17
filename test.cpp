@@ -11,9 +11,10 @@
 
 using namespace std;
 using namespace FTPDef;
+using namespace FTPProcessor;
 int main()
 {
-	cout << "FTP-Tool Test." << endl;
+	cout << endl << "FTP-Tool Test." << endl;
 
 	FTPCore ftp;
 
@@ -25,7 +26,30 @@ int main()
 	ftp.addFTPAction(ftpAct);
 	ftp.processFTPAction();
 
-	cout << "End FTP-Tool Test." << endl;
+
+	if (Utility::FileUtils::fileExist("/home/nemochen/workspace/FTP-tool/test.cpp"))
+	{
+		cout << "File Exit" << endl;
+	}
+	else
+	{
+		cout << "File Not Exit" << endl;
+	}
+
+	list<string> files;
+	Utility::FileUtils::listDirectory("/home/nemochen/workspace/FTP-tool/", files ,true);
+	for(auto i = files.begin(); i != files.end(); i++)
+	{
+		cout << (*i) << endl;
+	}
+
+	Utility::BashUtils::shellExecute("ls --color");
+
+	string result = Utility::BashUtils::getCmdOutput("ls");
+
+	cout << "Result (" << result << ")" << endl;
+
+	cout << "End FTP-Tool Test." << endl << endl;
 	return 0;
 }
 

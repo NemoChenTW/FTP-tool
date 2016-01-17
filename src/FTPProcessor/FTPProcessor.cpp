@@ -7,6 +7,9 @@
 
 #include <FTPProcessor/FTPProcessor.h>
 
+namespace FTPProcessor
+{
+
 FTPProcessor::FTPProcessor()
 {
 	// TODO Auto-generated constructor stub
@@ -20,5 +23,7 @@ FTPProcessor::~FTPProcessor()
 
 void FTPProcessor::process(FTPCore *ftp)
 {
+
+}
 
 }
