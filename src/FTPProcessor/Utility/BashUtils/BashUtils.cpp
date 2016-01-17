@@ -18,6 +18,8 @@ namespace BashUtils {
 
 using namespace std;
 
+#define MAX_PIPEBUF_SIZE	128
+
 /**
  * execute shell command and check result valid
  */
@@ -53,6 +55,25 @@ bool shellExecute(const char* cmdString)
 	}
 
 	return true;
+}
+
+
+/**
+ * Execute shell command and get output result
+ */
+string getCmdOutput(const char* cmdString)
+{
+    FILE* pipe = popen(cmdString, "r");
+    if (!pipe) return "ERROR";
+
+    char buffer[MAX_PIPEBUF_SIZE];
+    std::string result("");
+    while(!feof(pipe)) {
+        if(fgets(buffer, MAX_PIPEBUF_SIZE, pipe) != NULL)
+            result += buffer;
+    }
+    pclose(pipe);
+    return result.substr(0, result.length()-1);
 }
 
 } /* namespace BashUtils */
