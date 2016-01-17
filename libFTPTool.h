@@ -8,8 +8,8 @@
 #ifndef LIBFTPTOOL_H_
 #define LIBFTPTOOL_H_
 
-#include "src/FTPCore/FTPCore.h"
-
+#include "FTPCore/FTPCore.h"
+#include "FTPProcessor/FTPProcessor.h"
 
 
 #endif /* LIBFTPTOOL_H_ */
