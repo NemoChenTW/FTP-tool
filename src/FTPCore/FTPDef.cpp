@@ -12,6 +12,16 @@ namespace FTPDef
 {
 char* str_FTPType[] = {"fileUpload", "folderUpload", "fileDownload", "folderDownload"};
 
+/**
+ * @brief	Set FTP action result.
+ *
+ * @param	success		Input FTP action result.
+ */
+void FTPInfo::setFTPResult(bool result)
+{
+	FTPResult = result;
+}
+
 UploadInfo &UploadInfo::operator=(const UploadInfo &right)
 {
 	this->name 				= right.name;

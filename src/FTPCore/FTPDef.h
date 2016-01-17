@@ -29,6 +29,18 @@ using namespace std;
 		virtual ~FTPInfo() = default;
 
 		virtual void show()=0;
+
+		///	Set FTP action result.
+		void setFTPResult(bool result);
+
+		///	Get FTP action result.
+		bool isFTPSuccess()
+		{
+			return FTPResult;
+		}
+
+	protected:
+		bool FTPResult = false;
 	};
 
 	class UploadInfo :public FTPInfo
